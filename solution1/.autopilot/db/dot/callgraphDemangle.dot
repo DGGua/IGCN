@@ -1,0 +1,7 @@
+digraph "Call graph demangled" {
+	label="Call graph demangled";
+
+	Node0x4c91cd0 [shape=record,label="{IGCN(int*, int, int*)}" fid="1" demanglename="IGCN" manglename="_Z4IGCNPiiS_" filename="../../../igcn.cpp" linenumber="8"];
+	Node0x4c91cd0 -> Node0x4c91e20;
+	Node0x4c91e20 [shape=record,label="{t(int*, int, int, int*)}" fid="2" demanglename="t" manglename="_Z1tPiiiS_" filename="../../../igcn.cpp" linenumber="3"];
+}

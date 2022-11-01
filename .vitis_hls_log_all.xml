@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'IGCN_label0': contains subloop(s) that are not unrolled or flattened." projectName="IGCN" solutionName="solution1" date="2022-10-27T18:21:43.206+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'IGCN_label0' (IGCN/igcn.cpp:16:12) in function 'IGCN' the outer loop is not a perfect loop because either the parent loop or the sub loop has no invariant trip count.&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-960.html" projectName="IGCN" solutionName="solution1" date="2022-10-27T18:21:43.068+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-936] Cannot unroll loop 't_label1' (IGCN/igcn.cpp:5) in function 'IGCN': cannot completely unroll a loop with a variable trip count.&#xA;Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-936.html" projectName="IGCN" solutionName="solution1" date="2022-10-27T18:21:43.057+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

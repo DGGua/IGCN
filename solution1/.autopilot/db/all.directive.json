@@ -1,0 +1,65 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "IGCN",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/ubuntu\/VitisCodes\/IGCN\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "IGCN"
+              }]
+          }
+        },
+        {
+          "functionName": "IGCN",
+          "label": "IGCN_label0",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/ubuntu\/VitisCodes\/IGCN\/solution1\/directives.tcl",
+          "sourceLine": "7",
+          "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "t",
+          "label": "t_label1",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/ubuntu\/VitisCodes\/IGCN\/solution1\/directives.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "LOOP_TRIPCOUNT",
+            "option": [
+              {
+                "name": "min",
+                "value": "5"
+              },
+              {
+                "name": "max",
+                "value": "5"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "IGCN",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/ubuntu\/VitisCodes\/IGCN\/solution1\/csynth.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "IGCN"
+              }]
+          }
+        }
+      ]
+    }]}

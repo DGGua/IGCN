@@ -1,0 +1,135 @@
+
+
+================================================================
+== Vitis HLS Report for 'IGCN_Pipeline_VITIS_LOOP_12_1'
+================================================================
+* Date:           Thu Oct 27 18:21:43 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        IGCN
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z045-ffv900-3
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.334 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_12_1  |        ?|        ?|         1|          1|          1|     ?|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.33>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 4 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%trunc_ln_read = read i31 @_ssdm_op_Read.ap_auto.i31, i31 %trunc_ln"   --->   Operation 5 'read' 'trunc_ln_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%size_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %size"   --->   Operation 6 'read' 'size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.14ns)   --->   "%store_ln0 = store i6 0, i6 %i"   --->   Operation 7 'store' 'store_ln0' <Predicate = true> <Delay = 1.14>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_2 = load i6 %i" [IGCN/igcn.cpp:12]   --->   Operation 9 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%i_cast = zext i6 %i_2" [IGCN/igcn.cpp:12]   --->   Operation 10 'zext' 'i_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 11 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.91ns)   --->   "%icmp_ln12 = icmp_eq  i32 %i_cast, i32 %size_read" [IGCN/igcn.cpp:12]   --->   Operation 12 'icmp' 'icmp_ln12' <Predicate = true> <Delay = 1.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (1.51ns)   --->   "%add_ln12 = add i6 %i_2, i6 1" [IGCN/igcn.cpp:12]   --->   Operation 13 'add' 'add_ln12' <Predicate = true> <Delay = 1.51> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln12 = br i1 %icmp_ln12, void %for.inc.split, void %for.inc10.preheader.exitStub" [IGCN/igcn.cpp:12]   --->   Operation 14 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%i_cast1 = zext i6 %i_2" [IGCN/igcn.cpp:12]   --->   Operation 15 'zext' 'i_cast1' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specloopname_ln12 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [IGCN/igcn.cpp:12]   --->   Operation 16 'specloopname' 'specloopname_ln12' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%testarr_addr = getelementptr i31 %testarr, i64 0, i64 %i_cast1" [IGCN/igcn.cpp:13]   --->   Operation 17 'getelementptr' 'testarr_addr' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (2.41ns)   --->   "%store_ln13 = store i31 %trunc_ln_read, i6 %testarr_addr" [IGCN/igcn.cpp:13]   --->   Operation 18 'store' 'store_ln13' <Predicate = (!icmp_ln12)> <Delay = 2.41> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.41> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 50> <RAM>
+ST_1 : Operation 19 [1/1] (1.14ns)   --->   "%store_ln12 = store i6 %add_ln12, i6 %i" [IGCN/igcn.cpp:12]   --->   Operation 19 'store' 'store_ln12' <Predicate = (!icmp_ln12)> <Delay = 1.14>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.inc" [IGCN/igcn.cpp:12]   --->   Operation 20 'br' 'br_ln12' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 21 'ret' 'ret_ln0' <Predicate = (icmp_ln12)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.33ns
+The critical path consists of the following:
+	'alloca' operation ('i') [4]  (0 ns)
+	'load' operation ('i', IGCN/igcn.cpp:12) on local variable 'i' [10]  (0 ns)
+	'add' operation ('add_ln12', IGCN/igcn.cpp:12) [14]  (1.52 ns)
+	'store' operation ('store_ln12', IGCN/igcn.cpp:12) of variable 'add_ln12', IGCN/igcn.cpp:12 on local variable 'i' [21]  (1.15 ns)
+	blocking operation 1.67 ns on control path)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

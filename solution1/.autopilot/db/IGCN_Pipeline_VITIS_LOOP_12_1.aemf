@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1666866103316">
+  <ports id="1" name="size" type="PortType" coreId="997420912" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="testarr" type="PortType" coreName="RAM" coreId="543973742" bitwidth="31" direction="DirOut" iftype="IfTypeRegister" arraysize="50">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <ports id="3" name="trunc_ln" type="PortType" coreId="779314286" bitwidth="31">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="30" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="33" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="37" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="38" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="39" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="40" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="42" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="45" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="46" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="47" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="48" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="49" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@ports.1"/>
+  <edges id="52" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="53" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="54" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="55" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="56" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="57" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="72" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="73" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="74" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="75" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="76" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="77" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="78" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <blocks id="9" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.inc</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="i" originalName="i" coreId="1667592275" bitwidth="6" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="trunc_ln_read" coreId="1936028205" bitwidth="31" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>trunc_ln</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="size_read" coreId="4294967295" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>size</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="i_write_ln0" coreId="3608817552" opcode="store" m_display="0" m_delay="1.14" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="br_ln0" coreId="1663971374" opcode="br" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.inc</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="25" name="for.inc10.preheader.exitStub" type="BlockType">
+    <controlInputObjs>for.inc</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="_ln0" coreId="4237674544" opcode="ret" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="84" pipe_depth="1" RegionName="VITIS_LOOP_12_1">
+    <basic_blocks id="16" name="for.inc" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc10.preheader.exitStub</controlOutputObjs>
+      <controlOutputObjs>for.inc.split</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="i_2" lineNumber="12" originalName="i" fileName="IGCN/igcn.cpp" fileDirectory=".." coreId="1852008297" contextFuncName="IGCN" bitwidth="6" opcode="load" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="i_cast" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." rtlName="i_cast_fu_68_p1" coreId="1852008297" contextFuncName="IGCN" bitwidth="32" opcode="zext" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="icmp_ln12" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." rtlName="icmp_ln12_fu_72_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="IGCN" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.91" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="add_ln12" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." rtlName="add_ln12_fu_78_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="IGCN" bitwidth="6" opcode="add" m_display="0" m_delay="1.51" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="br_ln12" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." coreId="825319251" contextFuncName="IGCN" opcode="br" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc.split</controlInputObjs>
+        <controlInputObjs>for.inc10.preheader.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="IGCN/igcn.cpp">
+        <validLinenumbers>12</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="23" name="for.inc.split" type="BlockType">
+      <controlInputObjs>for.inc</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.inc</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="i_cast1" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." rtlName="i_cast1_fu_84_p1" coreId="757935405" contextFuncName="IGCN" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="testarr_addr" lineNumber="13" fileName="IGCN/igcn.cpp" fileDirectory=".." coreId="2228327" contextFuncName="IGCN" bitwidth="6" opcode="getelementptr" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="13" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>testarr</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="testarr_addr_write_ln13" lineNumber="13" fileName="IGCN/igcn.cpp" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="IGCN" opcode="store" m_display="0" m_delay="2.41" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="13" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="i_write_ln12" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." coreId="4237673136" contextFuncName="IGCN" opcode="store" m_display="0" m_delay="1.14" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="br_ln12" lineNumber="12" fileName="IGCN/igcn.cpp" fileDirectory=".." coreId="4237674112" contextFuncName="IGCN" opcode="br" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="IGCN/igcn.cpp" linenumber="12" fileDirectory="/home/ubuntu/VitisCodes" functionName="IGCN"/>
+        <controlInputObjs>for.inc</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="IGCN/igcn.cpp">
+        <validLinenumbers>12</validLinenumbers>
+        <validLinenumbers>13</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <regnodes realName="i_reg_94">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <expressionNodes realName="i_cast_fu_68">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="testarr_addr_gep_fu_46">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_30">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln12_fu_72">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln12_fu_78">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast1_fu_84">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="store_ln0_store_fu_60">
+    <nodeIds>7</nodeIds>
+  </ioNodes>
+  <ioNodes realName="trunc_ln_read_read_fu_34">
+    <nodeIds>5</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_2_load_fu_65">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="size_read_read_fu_40">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln12_store_fu_89">
+    <nodeIds>21</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="testarr">
+    <nodeIds>20</nodeIds>
+  </memoryPorts>
+  <ioPorts name="size">
+    <contents name="read">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="testarr(p0)">
+    <contents name="store">
+      <nodeIds>20</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="trunc_ln">
+    <contents name="read">
+      <nodeIds>5</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="IGCN_Pipeline_VITIS_LOOP_12_1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>9</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_12_1" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+      <basicBlocks>16</basicBlocks>
+      <basicBlocks>23</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>25</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

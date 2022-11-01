@@ -1,0 +1,21 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ubuntu/VitisCodes/IGCN/solution1/directives.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="t" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=5 max=5" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ubuntu/VitisCodes/IGCN/solution1/csynth.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="IGCN" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=IGCN" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ubuntu/VitisCodes/IGCN/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="IGCN" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=IGCN" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/ubuntu/VitisCodes/IGCN/solution1/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="IGCN" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="IGCN/igcn.cpp:5:3" msg_body="Loop 't_label1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="t_label1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="IGCN/igcn.cpp:9:0" msg_body="Inlining function 't(int*, int, int*)' into 'IGCN(int*, int, int*)'">
+        <args Callee="t(int*, int, int*)" Caller="IGCN(int*, int, int*)"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

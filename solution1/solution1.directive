@@ -1,0 +1,24 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="IGCN" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="IGCN"/>
+            </pragma>
+        </directive>
+        <directive functionName="IGCN" label="IGCN_label0" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="t" label="t_label1" functionLabel="">
+            <pragma name="LOOP_TRIPCOUNT">
+                <option name="min" value="5"/>
+                <option name="max" value="5"/>
+            </pragma>
+        </directive>
+        <directive functionName="IGCN" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="IGCN"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

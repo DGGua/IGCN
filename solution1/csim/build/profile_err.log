@@ -1,0 +1,14 @@
+Function:_Z4IGCNPiiS_ ---> FID:1
+Function:_Z1tPiiiS_ ---> FID:2
+CFGHierUserfilelist:[/home/ubuntu/VitisCodes/test.cpp /home/ubuntu/VitisCodes/IGCN/igcn.cpp]
+TopFunctionName:IGCN
+Writing 'callgraphDemangle.dot'...Function:_Z4IGCNPiiS_ ---> FID:1
+Function:_Z1tPiiiS_ ---> FID:2
+
+Writing 'cfg_main_csim.dot'...Function:_Z4IGCNPiiS_ ---> FID:1
+
+Function:_Z1tPiiiS_ ---> FID:2
+Writing 'cfg_2_csim.dot'...
+Function:_Z4IGCNPiiS_ ---> FID:1
+Writing 'cfg_1_csim.dot'...Function:_Z1tPiiiS_ ---> FID:2
+
